@@ -1,13 +1,5 @@
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
-on: #   https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#example-using-a-list-of-events
-  push:
-    paths:
-      - "site/docs/api/*.md" # Because this script checks these documents, so runs this action if and only if they changed.
-    #branches:
-    #  - master
-  pull_request:
-    paths:
-      - "site/docs/api/*.md"
+on: [push, pull_request]  # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#example-using-a-list-of-events
 
 name: check-api-md-file-is-ok
 env: # Sharing with all jobs.
