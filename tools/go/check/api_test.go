@@ -31,6 +31,7 @@ func TestAPIDocsIsOK(t *testing.T) {
 - **Attribute:** 🐬data-show-button-text🐬
 - **Attribute:** 🐬data-show-button🐬
 - **Type:** 🐬Boolean🐬
+- **Example:** [Check/Uncheck](https://examples.bootstrap-table.com/#methods/check-uncheck.html)
 - **Detail:**
 `
 	dOK = strings.ReplaceAll(dOK, "🐬", "`")
@@ -42,6 +43,7 @@ func TestAPIDocsIsOK(t *testing.T) {
 - **Attribute:** 🐬data-show-button-text🐬
 - **Attribute:** 🐬error-2🐬
 - **Type:** 🐬Boolean🐬
+- **Example:** [Check/Uncheck](https://examples.bootstrap-table.com/#methods/check-uncheck)
 - **Detail:**
 `
 	dFailed = strings.ReplaceAll(dFailed, "🐬", "`")
@@ -54,7 +56,7 @@ func TestAPIDocsIsOK(t *testing.T) {
 			_, _ = file.Write([]byte(curData.data))
 			_ = file.Close()
 			resultState := APIDocsIsOK([]string{file.Name()})
-			assert.Equal(t, resultState, curData.expectResult)
+			assert.Equal(t, curData.expectResult, resultState)
 		}
 	}
 }

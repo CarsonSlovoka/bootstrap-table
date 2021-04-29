@@ -50,6 +50,7 @@ func Check() error {
 		}
 		return fileList, nil
 	}
+
 	apiFilepathSlice, _ := collectFiles(apiDir, []string{".md"})
 	if !check.APIDocsIsOK(apiFilepathSlice) {
 		return errors.New("api documentation may not ok  please check again")
